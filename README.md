@@ -49,7 +49,7 @@
 
 
 Ok, now small chat. 
-There are many of these features or things that could have been added or done different. But i have a lot of work i had to do so i only could work a couple of evenings on this project.
+There are many of these features or things that could have been added or done different. But I had a lot of work I had to do so i only could work a couple of evenings on this project.
 It's not much work but it's honest work.
 
 Enjoy it
