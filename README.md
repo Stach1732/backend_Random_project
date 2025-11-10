@@ -14,7 +14,6 @@
 | `POST` | `/api/auth/register` | Register a new user     |
 | `POST` | `/api/auth/login`    | Login with credentials  |
 | `POST` | `/api/game/play`     | Play a round against AI |
-| `GET`  | `/actuator/health`   | Check backend status    |
 
 ##Things That Could Be Changed
 | Area               | Description                                                                                 |
