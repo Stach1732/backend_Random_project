@@ -1,13 +1,4 @@
 # Rock–Paper–Scissors Game (Spring Boot + Angular + MongoDB)
-## Features
-
-- Register and login securely with hashed passwords  
-- Play against a random AI move generator  
-- View real-time game results  
-- Multilingual support (English / Spanish / German)  
-- Audit log system (records each login, game, and action)  
-- Prometheus-compatible metrics and structured logging  
-
 ##Endpoints
 | Method | Endpoint             | Description             |
 | ------ | -------------------- | ----------------------- |
