@@ -15,6 +15,38 @@
 | `POST` | `/api/auth/login`    | Login with credentials  |
 | `POST` | `/api/game/play`     | Play a round against AI |
 
+
+##Features implemented:
+| Area | Feature | Description |
+|------|----------|-------------|
+| **Backend – Core** | Game Logic (AI vs Player) | Functional game service where the user plays Rock–Paper–Scissors against a randomly generated AI move. |
+|  | Random AI | The AI opponent makes moves randomly without learning or prediction. |
+|  | GameRecord persistence | Each game is saved in MongoDB with player move, CPU move, result, and timestamp. |
+| **Backend – Authentication** | User registration endpoint (`/api/auth/register`) | Allows users to register with username, password, email, and level. Passwords are stored securely with BCrypt hashing. |
+|  | Login endpoint (`/api/auth/login`) | Authenticates users by verifying their credentials against MongoDB with BCrypt password matching. |
+|  | BCrypt encryption | All passwords are hashed using BCrypt before being stored — no plaintext credentials exist in the database. |
+| **Backend – Auditing & Logging** | Audit system | Each login and key user action is logged as an `AuditEvent` in MongoDB, including type, user, and timestamp. |
+|  | AuditEventRepository (Mongo) | Stores all audit entries automatically into the `audit_events` collection. |
+|  | Structured logging | Loggers report key lifecycle events (service calls, audit saves, authentication steps). |
+| **Backend – Database** | MongoDB integration | The project fully uses MongoDB via `spring-boot-starter-data-mongodb`, with collections auto-generated. |
+|  | Repositories migrated to Mongo | Both `AuditEventRepository` and `GameRecordRepository` extend `MongoRepository`. |
+| **Backend – Testing** | JUnit + Mockito tests | Unit and integration tests for authentication and game logic. |
+|  | Naming pattern: `methodName_inputData_expectedResult` | All test cases follow this naming standard for clarity and consistency. |
+| **Frontend – Structure** | Angular 20+ standalone components | Application built with modern Angular standalone architecture (no NgModules). |
+|  | Routing system | Functional routing between Login, Register, and Game pages using `provideRouter()`. |
+|  | Dynamic API communication | Frontend communicates with backend endpoints (`/api/auth/*` and `/api/game/play`) via Angular `HttpClient`. |
+| **Frontend – Game** | Interactive buttons | Players can click Rock, Paper, or Scissors to play rounds, and the result message updates dynamically. |
+| **Frontend – Internationalization (i18n)** | Multilingual support (English, Spanish, German) | The entire UI supports three languages using `@ngx-translate/core` and `@ngx-translate/http-loader`. |
+|  | Language Switcher component | Allows switching between English, Spanish, and German from any page (Login, Register, Game). |
+|  | JSON translation files | Separate translation files for each language located in `assets/i18n/en.json`, `es.json`, and `de.json`. |
+| **Infrastructure & Configuration** | MongoDB configuration in `application.yml` | Uses `spring.data.mongodb.uri` instead of SQL datasource (H2 removed). |
+|  | Application logging enabled | Configured to log key backend lifecycle steps for debugging and monitoring. |
+| **General & Best Practices** | Clean architecture | Separation between controller, service, repository, and model layers. |
+|  | Entity migration from JPA to MongoDB | `@Entity` replaced with `@Document` in all models (`AuditEvent`, `GameRecord`). |
+|  | Proper repository interfaces | `JpaRepository` replaced with `MongoRepository` and IDs switched from `UUID` to `String`. |
+|  | Code modularization | Clear separation between Auth, Game, and Audit logic. |
+|  | Proxy configuration | Angular proxy file redirects `/api` calls from port 4200 to backend port 8080. |
+
 ##Features Not Yet Implemented (But could be added in the future easily)
 | Feature                         | Description                                                                                                                                                 |
 | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -24,8 +56,6 @@
 |  **Password management**        | Enable users to change or recover passwords both from their profile and from the login page.                                                                |
 |  **Extended testing coverage**  | Add more test cases to cover all new and future developments.                                                                                               |
 |  **Smarter AI**                 | Enhance the AI’s decision-making to recognize simple player patterns or tendencies.                                                                         |
-|  **Test naming convention**     | All tests follow the naming pattern: `methodName_inputData_expectedResult`.                                                                                 |
-|  **Secure password storage*    | User passwords are stored using a strong one-way encryption algorithm (BCrypt), ensuring no plaintext storage — even in the event of a data leak or breach. |
 
 ##Things that COULD be added 
 | Feature         | Description                                                  |
