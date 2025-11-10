@@ -15,17 +15,6 @@
 | `POST` | `/api/auth/login`    | Login with credentials  |
 | `POST` | `/api/game/play`     | Play a round against AI |
 
-##Things That Could Be Changed
-| Area               | Description                                                                                 |
-| ------------------ | ------------------------------------------------------------------------------------------- |
-| **Database**       | Switch from MongoDB to PostgreSQL if strong relational consistency is needed.               |
-| **Security**       | Add JWT-based authentication instead of simple session validation.                          |
-| **Logging**        | Replace simple logs with centralized monitoring (ELK, Loki, or Graylog).                    |
-| **Game logic**     | Introduce configurable difficulty levels or “AI personalities.”                             |
-| **Frontend state** | Integrate state management (NgRx or signals) for better scalability.                        |
-| **UI design**      | Replace basic HTML/CSS with a Material or Tailwind design system.                           |
-| **Testing**        | Expand unit/integration tests using JUnit + Mockito (backend) and Jasmine/Karma (frontend). |
-
 ##Features Not Yet Implemented (But could be added in the future easily)
 | Feature                         | Description                                                                                                                                                 |
 | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
