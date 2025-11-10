@@ -1,5 +1,5 @@
 # Rock–Paper–Scissors Game (Spring Boot + Angular + MongoDB)
-##Endpoints
+## Endpoints
 | Method | Endpoint             | Description             |
 | ------ | -------------------- | ----------------------- |
 | `POST` | `/api/auth/register` | Register a new user     |
@@ -7,7 +7,7 @@
 | `POST` | `/api/game/play`     | Play a round against AI |
 
 
-##Features implemented:
+## Features implemented:
 | Area | Feature | Description |
 |------|----------|-------------|
 | **Backend – Core** | Game Logic (AI vs Player) | Functional game service where the user plays Rock–Paper–Scissors against a randomly generated AI move. |
@@ -38,7 +38,7 @@
 |  | Code modularization | Clear separation between Auth, Game, and Audit logic. |
 |  | Proxy configuration | Angular proxy file redirects `/api` calls from port 4200 to backend port 8080. |
 
-##Features Not Yet Implemented (But could be added in the future easily)
+## Features Not Yet Implemented (But could be added in the future easily)
 | Feature                         | Description                                                                                                                                                 |
 | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |  **Dynamic frontend interface** | Enhance the UI to include animations, transitions, and real-time updates.                                                                                   |
@@ -48,7 +48,7 @@
 |  **Extended testing coverage**  | Add more test cases to cover all new and future developments.                                                                                               |
 |  **Smarter AI**                 | Enhance the AI’s decision-making to recognize simple player patterns or tendencies.                                                                         |
 
-##Things that COULD be added 
+## Things that COULD be added 
 | Feature         | Description                                                  |
 | --------------- | ------------------------------------------------------------ |
 |  User Profiles  | Allow users to upload avatars or edit personal info.         |
@@ -82,16 +82,16 @@ Before running the application, make sure you have the following installed:
 
 ### 2. Run the Backend (Spring Boot)
 
-cd rps-backend
-mvn clean install
-mvn spring-boot:run
+-cd rps-backend 
+-mvn clean install 
+-mvn spring-boot:run 
 
 Once running, the backend will be available at: http://localhost:8080
 
 ### 3. Run the Frontend (Angular)
 
-cd rps-frontend
-npm install
-npm run start
+-cd rps-frontend 
+-npm install 
+-npm run start 
 
 The Angular development server will start at: http://localhost:4200
