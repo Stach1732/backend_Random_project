@@ -81,7 +81,6 @@ Before running the application, make sure you have the following installed:
 | **Git** | Latest |
 
 ### 2. Run the Backend (Spring Boot)
-## Run the backend
 
 cd rps-backend
 mvn clean install
@@ -89,3 +88,10 @@ mvn spring-boot:run
 
 Once running, the backend will be available at: http://localhost:8080
 
+### 3. Run the Frontend (Angular)
+
+cd rps-frontend
+npm install
+npm run start
+
+The Angular development server will start at: http://localhost:4200
