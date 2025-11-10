@@ -64,3 +64,28 @@ It's not much work but it's honest work.
 
 Enjoy it
 
+
+## Installation and Startup Guide
+
+### 1. Prerequisites
+
+Before running the application, make sure you have the following installed:
+
+| Tool | Minimum Version |
+|------|------------------|
+| **Java JDK** | 17 or higher |
+| **Maven** | 3.8+ |
+| **Node.js** | 18 or higher |
+| **npm** | 9 or higher |
+| **MongoDB** | 6+ |
+| **Git** | Latest |
+
+### 2. Run the Backend (Spring Boot)
+## Run the backend
+
+cd rps-backend
+mvn clean install
+mvn spring-boot:run
+
+Once running, the backend will be available at: http://localhost:8080
+
